@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reg.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="theHeading">
+        <h1>REGISTRATIONS</h1>
+    </div>
+
+    <div class="main">
+            <label for="reg">Registration No:</label>
+            <input type="text" id="reg" name="regNo" placeholder="CA-123-456" class="regNo"><br>
+            <button class="theButton">Add</button><br>
+            <div class="alert"></div>
+            
+            <br>
+            <label for="country">Select the town</label>
+            <select class="town" name="town">
+              <option value="all">All Towns</option>
+              <option value="cpt">Cape Town</option>
+              <option value="paarl">Paarl</option>
+              <option value="george">George</option>
+              <option value="stellenbosch">Stellenbosch</option>
+            </select>
+    </div>
+    
+    <div class="dispay"></div>
+        
+   
+
+
+    <script src="./JS/reg-factory.js"></script>
+    <script src="./JS/dom-logic.js"></script>
+</body>
+</html>
