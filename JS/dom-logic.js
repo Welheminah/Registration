@@ -21,9 +21,9 @@ function theReg() {
     newElement.innerText = regInstance.numberPlates(regNo.value)
     dispayElement.appendChild(newElement);
   }
-  else {
-    alertElement.innerHTML = "Enter valid registration";
-  }
+  // else {
+  //   alertElement.innerHTML = "Enter valid registration";
+  // }
 
 
 }
