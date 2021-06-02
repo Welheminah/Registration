@@ -7,9 +7,11 @@ function regPlate() {
 
     
     function numberPlates(registration){
-        // var type = /^((CA|CJ|CY|CL)\s([0-9]){3}\s([0-9]){3})$/;
         var type =  /^((CJ|CY|CL|CA)\-([0-9]){3}\-([0-9]){3})$/;
-        var isValid = type.test(registration)
+        var type2 = /^((CJ|CY|CL|CA)\s([0-9]){3}\s([0-9]){3})$/;
+        var type3 = /^(CJ|CY|CL|CA)\s[0-9]{5}$/;
+        var isValid = type.test(registration);
+        
         alert(isValid)
         if(isValid){
             
