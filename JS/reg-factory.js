@@ -20,7 +20,7 @@ function regPlate() {
         if(isValid || isValid2 || isValid3 || isValid4){
             if(!platesStore.includes(registration)){
                 platesStore.push(registration)
-                console.log(platesStore);
+               
                 return;
             } 
             else {
