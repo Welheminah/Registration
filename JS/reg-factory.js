@@ -9,11 +9,12 @@ function regPlate() {
     function numberPlates(registration){
         var type =  /^((CJ|CY|CL|CA)\-([0-9]){3}\-([0-9]){3})$/;
         var type2 = /^((CJ|CY|CL|CA)\s([0-9]){3}\s([0-9]){3})$/;
-        var type3 = /^(CJ|CY|CL|CA)\s[0-9]{5}$/;
+        var type3 = /^(CJ|CY|CL|CA)\-[0-9]{5}$/;
         var isValid = type.test(registration);
-        
-        alert(isValid)
-        if(isValid){
+        var isValid2 = type2.test(registration);
+        var isValid3 = type3.test(registration);
+        // alert(isValid)
+        if(isValid || isValid2 || isValid3){
             
             
             return registration
