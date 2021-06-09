@@ -31,7 +31,6 @@ function goFilter(){
   var radioBtn = radio.value;
   
   if(radioBtn){
-    
     var regFilter = regInstance.filterReg(radioBtn)
     console.log(regFilter);
    for (i = 0; i < regFilter.length; i++) {
@@ -56,4 +55,4 @@ show.addEventListener('click', goFilter);
 
 
 theButton.addEventListener('click', theReg);
-show.addEventListener('click', letsUncheck)
+// show.addEventListener('click', letsUncheck);

@@ -49,6 +49,10 @@ function regPlate() {
         }
     }
 
+    function returnArray(){
+        return platesStore;
+    }
+
     // function storings(registration){
     //     if(!platesStore.includes(registration)){
     //             platesStore.push(registration);
@@ -78,5 +82,6 @@ function regPlate() {
         numberPlates,
         letsFilter,
         filterReg,
+        returnArray
     }
 }
