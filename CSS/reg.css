@@ -22,11 +22,11 @@ body {
 
 .main { 
     flex-flow: row wrap;
-    align-items: center;
+    /* align-items: center; */
     line-height: 40px;
     font-size: 20px;
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .container {
@@ -111,7 +111,7 @@ input[type=text], select {
     cursor: pointer;
     font-size: 20px;
     position: absolute;
-    left: 59%;
+    left: 24%;
 }
 .btn {
   padding: 10px 20px;
