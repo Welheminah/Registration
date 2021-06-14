@@ -21,67 +21,44 @@ function regPlate() {
             if(!platesStore.includes(registration)){
                 platesStore.push(registration);
                 console.log(platesStore);
-                return;
-            } 
-            else {
                 return registration;
+            } 
+            else if(platesStore.includes(registration)){
+                return "The registration entered already exist";
             }
-            // return registration
+        
         }
         else {
-            return false
+            return "Invalid regitration, please enter a valid registration eg CA 12345";
         } 
     }
 
 
-    function letsFilter(){
-        if(registration.startsWith("CA")){
-            return cpt;
-        }
-        else if(registration.startsWith("CJ")){
-            return paarl;
-        }
-        else if(registration.startsWith("CL")){
-            return stellenbosch;
-        }
-        else if(registration.startsWith("CA", "CJ", "CL")){
-            return all;
-        }
+
+
+    function getReg(){
+        return registration;
     }
 
-    function returnArray(){
+    function storings(){
         return platesStore;
     }
 
-    // function storings(registration){
-    //     if(!platesStore.includes(registration)){
-    //             platesStore.push(registration);
-    //             console.log(platesStore);            
-    //             return;
-    //         } 
-    //         else {
-    //             return registration;
-    //         }
-    // }
-
+    
     function filterReg(radioBtn){
         var filteredReg = [];
             for (i = 0; i < platesStore.length; i++) {
                 if(platesStore[i].startsWith(radioBtn)){
                     filteredReg.push(platesStore[i]);
             }
-
         }
         return filteredReg;
-
     }
     
-
-
     return {
         numberPlates,
-        letsFilter,
         filterReg,
-        returnArray
+        storings,
+        getReg
     }
 }
