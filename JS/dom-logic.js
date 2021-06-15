@@ -12,13 +12,10 @@ var dispayFilter = document.querySelector(".dispayFilter");
 var radio = document.querySelector("input[name='town']:checked");
 
 
-// var textInput = regInstance.numberPlates(regNo.value);
-
 var regInstance = regPlate();
 var storePlatesLocal = regInstance.storings();
 
 if(localStorage["reg"]){
-  // storePlatesLocal.push(regInstance.numberPlates(regNo.value));
   storePlatesLocal = JSON.parse(localStorage.getItem("reg"));
 
 
@@ -80,28 +77,12 @@ function theReg() {
 function goFilter() {
   dispayElement.innerHTML = '';
   dispayFilter.innerHTML = '';
-  // newElement.innerText = regInstance.numberPlates(regNo.value);
+  
   var radio = document.querySelector("input[name='town']:checked");
   var radioBtn = radio.value;
   
 
   if (radioBtn) {
-    // var regFilter = regInstance.filterReg(radioBtn)
-    // if (radioBtn === "ALL") { // storePlatesLocal
-    //   newElement.innerText = storePlatesLocal;
-    //   dispayFilter.appendChild(newElement);
-
-    // }
-    // if(radioBtn ==="ALL"){
-    //   for (i = 0; i < storePlatesLocal.length; i++) {
-    //     var newElement = document.createElement('button');
-    //     newElement.classList.add("btn");
-       
-    //     newElement.innerText = storePlatesLocal[i];
-    //     dispayFilter.appendChild(newElement);
-    //   }
-    //   return;
-    // }
 
     for (i = 0; i < storePlatesLocal.length; i++) {
       if(storePlatesLocal[i].startsWith(radioBtn)){

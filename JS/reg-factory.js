@@ -1,9 +1,6 @@
 function regPlate() {
 
     var platesStore = [] ;
-
-    //The format must be created so that the reg dont take anything
-    
     
     
     function numberPlates(registration){
