@@ -36,30 +36,31 @@ function theReg() {
 
 
   var ourValue = regInstance.numberPlates(regNo.value);
-  storePlatesLocal.push(regInstance);
+ 
 
   if (ourValue === "Invalid regitration, please enter a valid registration eg CA 12345") {
-
+    regNo.value = " ";
     newElement2.classList.add("errorMessages")
 
     alertElement.appendChild(newElement2);
+    alertElement.innerHTML = "Invalid regitration, please enter a valid registration eg CA 12345";
     setTimeout(function () {
-      newElement2.innerText = ''
+      alertElement.innerText = '';
     }, 4000);
     return;
+
   } else if (ourValue === "The registration entered already exist") {
+    regNo.value = " ";
     newElement2.classList.add("errorMessages")
     alertElement.appendChild(newElement2);
-    setTimeout(function () {
-      newElement2.innerText = ''
+    alertElement.innerHTML = "The registration entered already exist";
+    setTimeout(function () { 
+      alertElement.innerText = ''
     }, 4000);
     return;
-  } else if (ourValue === "") {
-    setTimeout(function () {
-      newElement2.innerText = ''
-    }, 4000);
-    return "Please enter the registration number";
-  }
+  
+  } 
+  
 
   newElement.innerText = ourValue;
   dispayElement.appendChild(newElement);
@@ -86,11 +87,17 @@ function goFilter() {
       if (storePlatesLocal[i].startsWith(radioBtn)) {
         var newElement = document.createElement('button');
         newElement.classList.add("btn");
-
         newElement.innerText = storePlatesLocal[i];
         dispayFilter.appendChild(newElement);
       }
+      else if(radioBtn === "ALL"){
+        var newElement = document.createElement('button');
+        newElement.classList.add("btn");
+        newElement.innerText = storePlatesLocal[i];
+        dispayElement.appendChild(newElement);
+      }
     }
+
   }
 }
 
