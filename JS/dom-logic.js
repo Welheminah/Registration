@@ -15,11 +15,11 @@ var radio = document.querySelector("input[name='town']:checked");
 var regInstance = regPlate();
 var storePlatesLocal = regInstance.storings();
 
-if(localStorage["reg"]){
+if (localStorage["reg"]) {
   storePlatesLocal = JSON.parse(localStorage.getItem("reg"));
 
 
-  for (var i = 0; i< storePlatesLocal.length; i++){
+  for (var i = 0; i < storePlatesLocal.length; i++) {
     var newElement = document.createElement('button');
     newElement.classList.add("btn");
 
@@ -33,15 +33,15 @@ function theReg() {
   var newElement = document.createElement('button');
   newElement.classList.add("btn");
   var newElement2 = document.createElement('p');
-  
+
 
   var ourValue = regInstance.numberPlates(regNo.value);
   storePlatesLocal.push(regInstance);
 
   if (ourValue === "Invalid regitration, please enter a valid registration eg CA 12345") {
- 
+
     newElement2.classList.add("errorMessages")
-    newElement2.innerText = ourValue;
+
     alertElement.appendChild(newElement2);
     setTimeout(function () {
       newElement2.innerText = ''
@@ -49,14 +49,12 @@ function theReg() {
     return;
   } else if (ourValue === "The registration entered already exist") {
     newElement2.classList.add("errorMessages")
-    newElement2.innerText = ourValue;
     alertElement.appendChild(newElement2);
-    alert();
     setTimeout(function () {
       newElement2.innerText = ''
     }, 4000);
     return;
-  }else if(ourValue === ""){
+  } else if (ourValue === "") {
     setTimeout(function () {
       newElement2.innerText = ''
     }, 4000);
@@ -77,21 +75,21 @@ function theReg() {
 function goFilter() {
   dispayElement.innerHTML = '';
   dispayFilter.innerHTML = '';
-  
+
   var radio = document.querySelector("input[name='town']:checked");
   var radioBtn = radio.value;
-  
+
 
   if (radioBtn) {
 
     for (i = 0; i < storePlatesLocal.length; i++) {
-      if(storePlatesLocal[i].startsWith(radioBtn)){
-      var newElement = document.createElement('button');
-      newElement.classList.add("btn");
-     
-      newElement.innerText = storePlatesLocal[i];
-      dispayFilter.appendChild(newElement);
-    }
+      if (storePlatesLocal[i].startsWith(radioBtn)) {
+        var newElement = document.createElement('button');
+        newElement.classList.add("btn");
+
+        newElement.innerText = storePlatesLocal[i];
+        dispayFilter.appendChild(newElement);
+      }
     }
   }
 }
