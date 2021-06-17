@@ -4,7 +4,7 @@ var dispayElement = document.querySelector(".dispay");
 var alertElement = document.querySelector(".alert");
 var select = document.querySelector(".select");
 var show = document.querySelector(".show");
-
+var clear = document.querySelector(".clear");
 var dispayFilter = document.querySelector(".dispayFilter");
 
 
@@ -101,6 +101,14 @@ function goFilter() {
   }
 }
 
+function clearAll(){
+  localStorage ['reg'] = "";
+  storePlatesLocal = [];
+  dispayElement.innerHTML = "";
+  dispayFilter.innerHTML = "";
+  window.location.reload();
+}
+
 
 function letsUncheck() {
   var radio = document.querySelector("input[name='town']:checked");
@@ -110,3 +118,4 @@ function letsUncheck() {
 show.addEventListener('click', goFilter);
 theButton.addEventListener('click', theReg);
 show.addEventListener('click', letsUncheck);
+clear.addEventListener('click', clearAll);
