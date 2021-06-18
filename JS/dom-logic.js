@@ -108,8 +108,10 @@ function goFilter() {
         dispayFilter.style.color = "#2F4F4F";
         dispayFilter.appendChild(newElement2); 
         
-        
         dispayFilter.innerHTML = "No registration for the selected town";
+        setTimeout(function () {
+          dispayFilter.innerText = ''
+        }, 2000);
         return;
       }
 
